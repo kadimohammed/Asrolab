@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.solar-system-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  padding: 0;
+  height: 100vh;
+}
+
+.solar-system-header {
+  background: none;
+  height: auto !important;
+  position: fixed;
+}
+
+.solar-system-container {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.solar-system-header .navbar {
+  background-color: transparent !important;
+}

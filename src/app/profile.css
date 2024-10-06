@@ -1,0 +1,188 @@
+.profile-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 3rem;
+    height: 90vh;
+}
+
+
+.left-sidebar {
+    width: 33%;
+    /* background-color: blue; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content {
+    width: 50%;
+    /* background-color: blueviolet; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.right-sidebar {
+    width: 27%;
+    /* background-color: brown; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.icon-large {
+    width: 30%;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: rgb(89, 88, 90); */
+    width: 70%;
+    height: 15%;
+}
+
+.profile-info {
+    /* background-color: azure; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0%;
+    width: 80%;
+    height: 100%;
+}
+
+.settings-icon-container {
+    width: 20%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.email-label {
+    font-size: 1.5rem;
+    font-family: 'SecondaryFont';
+}
+
+.settings-btn {
+    width: 70%;
+    height: auto;
+    transition: box-shadow 0.3s ease;
+}
+
+.username-label {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #ae34eb, #ff57bb, #d5d5d5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.icon-small {
+    width: 10%;
+    height: auto;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10%;
+    width: 70%;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-family: 'TertiaryFont', Courier, monospace;
+    background: linear-gradient(to right, #ae34eb, #ff57bb, #d5d5d5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.information-box {
+    /* background-color: rgb(161, 161, 161); */
+    height: 70%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.divider-lines {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: #ae34eb; */
+    height: 35%;
+    width: 100%;
+}
+
+.divider-lines span {
+    display: block;
+    width: 200px;
+    height: 2px;
+    width: 100%;
+    background-color: #ffc0cb;
+    margin: 10px auto;
+    opacity: 0.5;
+}
+
+.btn:hover {
+    cursor: pointer;
+    transform: scale(1.1); 
+}
+
+.profile-img-container {
+    width: 100%;
+    height: 100%;
+}
+
+.profile-image {
+    width: 12%;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .profile-section {
+        width: 100%;
+    }
+
+    .left-sidebar {
+        width: 10%;
+    }
+
+    .main-content {
+        width: 80%;
+    }
+
+    .right-sidebar {
+        width: 10%;
+    }
+
+    .profile-image {
+        width: 38%;
+    }
+
+    .icon-large {
+        width: 100%;
+    }
+}
+

@@ -1,0 +1,174 @@
+/* src/SignUp.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background-color: #3B3B44; /* Couleur de fond principale */
+}
+
+.signup-background {
+  background-image: url('https://d.newsweek.com/en/full/2316078/astronaut-space-laptop.jpg'); /* Remplacez par le chemin de votre image de fond spatiale */
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.7);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-overlay {
+  backdrop-filter: blur(10px);
+  background: rgba(59, 59, 68, 0.8); /* Couleur d'overlay ajustée */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(98, 86, 202, 0.4); /* Utilisation de #6256CA pour l'ombre */
+  width: 400px;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.nasa-logo {
+  width: 80px;
+  height: auto;
+}
+
+.signup-title {
+  text-align: center;
+  color: #C1E2A4; /* Couleur des titres ajustée */
+  font-family: 'Neue Montreal', 'Orbitron', sans-serif;
+  font-size: 2em;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #ffffff; /* Couleur des labels ajustée */
+  font-weight: 500;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  color: #3B3B44; /* Couleur du texte dans les champs */
+}
+
+.input-field:focus {
+  background: #ffffff;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkbox-input {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+}
+
+.checkbox-label {
+  color: #ffffff; /* Couleur des labels de checkbox */
+}
+
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(45deg, #6256CA, #C766C8); /* Dégradé ajusté */
+  border: none;
+  border-radius: 25px;
+  color: #ffffff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(98, 86, 202, 0.4); /* Ombre du bouton */
+}
+
+.submit-button:hover {
+  background: linear-gradient(45deg, #C766C8, #6256CA);
+  transform: translateY(-3px);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.footer-link {
+  color: #86D293; /* Couleur des liens de footer */
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #C1E2A4;
+  text-decoration: underline;
+}
+
+/* Effets supplémentaires */
+.signup-form {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Style pour la boîte d'erreur */
+.error-message {
+  background-color: #86D1AF; /* Couleur d'erreur ajustée */
+  color: #721c24;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+
+.error-message.hide {
+  opacity: 0;
+}
+
+.field-error {
+  color: #dc3545;
+  font-size: 0.875em;
+  margin-top: 5px;
+  display: block;
+}
+
+.input-error {
+  border: 1px solid #dc3545;
+  border-top-right-radius: 25px !important; 
+  border-bottom-right-radius: 25px !important; 
+}

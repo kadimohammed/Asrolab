@@ -1,0 +1,284 @@
+.solar-system-quiz-page {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Neue Montreal', 'Garet', sans-serif;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.space-theme {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000000;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(98, 86, 202, 0.4);
+  position: relative;
+  overflow: hidden;
+  max-width: 700px;
+  width: 90%;
+  backdrop-filter: blur(10px);
+}
+
+.top-left-star {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.bottom-right-star {
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.space-theme::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/stars-background.png');
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.quiz-container {
+  position: relative;
+}
+
+.question-container {
+  margin-bottom: 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.option {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Neue Montreal', 'Garet', sans-serif;
+}
+
+.option:hover, .option.selected {
+  background-color: #6256ca;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.next-button, .restart-button {
+  background-color: #6256ca;
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+  font-family: 'Neue Montreal', 'Garet', sans-serif;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+}
+
+.next-button:hover, .restart-button:hover {
+  background-color: #4f44a3;
+}
+
+.next-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.score {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #6256ca;
+}
+
+.star-decoration {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.star-decoration.top-left {
+  top: -100px;
+  left: -100px;
+  width: 200px;
+  height: 200px;
+}
+
+.star-decoration.bottom-right {
+  bottom: -75px;
+  right: -75px;
+  width: 150px;
+  height: 150px;
+}
+
+.quiz-completed {
+  text-align: center;
+}
+
+/* Add gradient text effect for headings */
+.quiz-container h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #ae34eb, #ff57bb, #d5d5d5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
+  .space-theme {
+    padding: 2rem;
+  }
+
+  .options {
+    grid-template-columns: 1fr;
+  }
+
+  .star-decoration {
+    width: 100px;
+    height: 100px;
+  }
+
+  .star-decoration.top-left {
+    top: -50px;
+    left: -50px;
+  }
+
+  .star-decoration.bottom-right {
+    bottom: -50px;
+    right: -50px;
+  }
+
+  .quiz-container h2 {
+    font-size: 2rem;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(98, 86, 202, 0.4);
+}
+
+.modal-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #ae34eb, #ff57bb, #d5d5d5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.audio-button, .start-quiz-button {
+  background-color: #6256ca;
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Neue Montreal', 'Garet', sans-serif;
+  font-weight: bold;
+  margin: 0.5rem;
+}
+
+.audio-button:hover, .start-quiz-button:hover {
+  background-color: #4f44a3;
+}
+
+.audio-modal {
+  max-width: 600px;
+}
+
+.audio-modal h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #ae34eb, #ff57bb, #d5d5d5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.audio-modal ul {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.audio-modal li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.audio-modal p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.close-button {
+  background-color: #ff5757;
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Neue Montreal', 'Garet', sans-serif;
+  font-weight: bold;
+  margin: 0.5rem;
+}
+
+.close-button:hover {
+  background-color: #ff3333;
+}

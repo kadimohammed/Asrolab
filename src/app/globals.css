@@ -1,0 +1,1050 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Your existing custom font declarations and styles */
+@font-face {
+  font-family: 'Garet';
+  src: url('/fonts/Garet-Book.woff2') format('woff2'),
+       url('/fonts/Garet-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Garet';
+  src: url('/fonts/Garet-Heavy.woff2') format('woff2'),
+       url('/fonts/Garet-Heavy.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('/fonts/NeueMontreal-Regular.woff2') format('woff2'),
+       url('/fonts/NeueMontreal-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('/fonts/NeueMontreal-Bold.woff2') format('woff2'),
+       url('/fonts/NeueMontreal-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('/fonts/NeueMontreal-Italic.woff2') format('woff2'),
+       url('/fonts/NeueMontreal-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('/fonts/NeueMontreal-BoldItalic.woff2') format('woff2'),
+       url('/fonts/NeueMontreal-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+body {
+  font-family: 'Neue Montreal', 'Garet', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #000000;
+  overflow-x: hidden;
+}
+
+header {
+  background-image: url('/images/header4.jpg');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden; 
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.logo {
+  z-index: 20;
+}
+
+.logo img {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  background-color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.nav-links li {
+  margin: 0 0.25rem; /* Reduced margin to fit more links */
+  position: relative;
+}
+
+.nav-links a {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0.75rem; /* Adjusted padding for better fit */
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  font-size: 0.9rem; 
+  font-family: 'Neue Montreal', 'Garet', sans-serif;
+  font-weight: bold; /* Set the font weight to bold */
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #6256ca;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5em; /* Slightly reduced size to fit within smaller space */
+  height: 5em;
+  background-color: #bbdb9f;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 0 Q60 40 100 50 Q60 60 50 100 Q40 60 0 50 Q40 40 50 0Z' fill='%23000000'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 0 Q60 40 100 50 Q60 60 50 100 Q40 60 0 50 Q40 40 50 0Z' fill='%23000000'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+.nav-links a:hover::before,
+.nav-links a.active::before {
+  opacity: 0.3; /* Adjust the opacity as needed */
+}
+
+.bookshelf-icon {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.hero {
+  height: 100vh;
+  background-image: url('/images/galaxy-background.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100vw; /* Use viewport width */
+  margin-left: calc(-50vw + 50%); /* Center the hero section */
+}
+
+.wave-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 150px;
+  background-image: url('/images/wave.svg');
+  background-size: cover;
+  left: calc(-50vw + 50%);
+}
+
+.logo-large {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 30;
+  width: 90%;
+  max-width: 600px;
+}
+
+.logo-circle {
+  width: 336px;
+  height: 336px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1rem;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  width: 90%;
+  height: 90%;
+  padding: 1%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.circular-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.logo-circle img {
+  width: 100%;
+  max-width: 336px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
+
+.logo-large h1 {
+  font-size: 3rem;
+  margin: 0rem 0 0;
+  color: #000;
+}
+
+.welcome {
+  padding: 2rem 0;
+  position: relative;
+}
+
+.welcome-content {
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+}
+
+.welcome-image {
+  flex: 1;
+  max-width: 50%;
+  position: relative;
+}
+
+.welcome-image > img {
+  width: 100%;
+  height: auto;
+  border-radius: 10rem;
+  object-fit: cover;
+}
+
+.top-left-star,
+.bottom-right-star {
+  position: absolute;
+  width: 18rem;
+  height: 18rem;
+  z-index: 1;
+}
+
+.top-left-star {
+  top: -6rem;
+  left: -6rem;
+}
+
+.bottom-right-star {
+  bottom: -6rem;
+  right: -6rem;
+}
+
+.top-left-star img,
+.bottom-right-star img {
+  width: 100%;
+  height: 100%;
+}
+
+.welcome-text {
+  flex: 1;
+  color: #000000;
+  position: relative;
+  transition: color 0.3s ease;
+  font-family: 'Neue Montreal', 'Garet', sans-serif;
+  font-weight: normal;
+  max-width: 60ch; /* Limit the width for better readability */
+}
+
+.welcome-text p {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.welcome-text p:last-child::after {
+  content: "✧"; /* Add the star symbol at the end */
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+.key-features {
+  padding: 6rem 0;
+  color: #000000;
+}
+
+.key-features h2 {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 8rem;
+}
+
+.feature .title {
+  margin-bottom: 2rem;
+
+}
+
+.feature h3 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.feature-content {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature-text {
+  flex: 1;
+}
+
+.feature-text p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.feature-text strong {
+  font-weight: 600;
+}
+
+.feature-image {
+  flex: 1;
+  position: relative;
+}
+
+.asteroid-image {
+  width: 70%;
+  height: auto;
+  border-radius: 10px;
+  float: right;
+}
+
+.top-right-star,
+.bottom-left-star {
+  position: absolute;
+  z-index: 1;
+}
+
+.top-right-star {
+  top: -13rem;
+  right: 16rem;
+  width: 30rem;
+  height: 30rem;
+}
+
+.bottom-left-star {
+  bottom: -9rem;
+  left: 25rem;
+}
+
+.top-right-star img,
+.bottom-left-star img {
+  width: 100%;
+  height: 100%;
+}
+
+.solar-system-mapping {
+  padding: 6rem 0;
+  text-align: center;
+  color: #000000;
+  position: relative;
+}
+
+.solar-system-content {
+  position: relative;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.solar-system-image {
+  position: relative;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.solar-system-image img {
+  width: 100%;
+  height: auto;
+}
+
+.solar-system-mapping p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  max-width: 61ch;
+  margin: 4rem auto;
+  position: relative;
+}
+
+.solar-system-mapping h2{
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 8rem;
+  font-family: 'Garet', 'Neue Montreal', sans-serif;
+
+}
+
+.star {
+  position: absolute;
+  width: 15rem;
+  height: 15rem;
+}
+
+.star-tp-left {
+  width: 22rem;
+  height: 22rem;
+  top: 17rem;
+  left: -1rem;
+}
+
+.star-bt-right {
+  bottom: -1rem;
+  right: 3rem;
+}
+
+.star img {
+  width: 100%;
+  height: 100%;
+}
+
+.venture-btn {
+  display: block;
+  margin: 3rem auto;
+  padding: 1.2rem 3.5rem;
+  font-size: 1.3rem;
+  background-image: url('/images/btn.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  border-radius: 30px;
+  color: #ffffff;
+  cursor: pointer;
+  max-width: 100%;
+  width: fit-content; /* Adjust button width to fit content */
+  position: relative; /* Add this for potential text positioning */
+  font-family: 'Neue Montreal', 'Garet', sans-serif;
+}
+
+.venture-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+main {
+  padding: 0 5rem; /* Increased padding on left and right */
+  font-size: 1.1rem; /* Increased base font size */
+}
+
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .nav-links {
+      flex-direction: column;
+      align-items: center;
+      margin: 1rem 0;
+  }
+
+  .nav-links li {
+      margin: 0.5rem 0;
+  }
+
+  .nav-links a {
+      font-size: 1rem; /* Increase font size for better readability on mobile */
+  }
+
+  .bookshelf-icon {
+      margin-top: 1rem;
+  }
+
+  .welcome, .feature-content {
+      flex-direction: column;
+  }
+
+  .welcome-image, .feature-image {
+      margin-bottom: 2rem;
+  }
+
+  .welcome-content {
+      flex-direction: column;
+  }
+
+  .welcome-image {
+      max-width: 100%;
+      margin-bottom: 2rem;
+  }
+
+  main {
+      padding: 0 2rem; /* Reduced padding for mobile devices */
+  }
+
+  .welcome-text {
+      max-width: 100%; /* Full width on mobile */
+  }
+
+  .welcome-text p {
+      font-size: 1.2rem; /* Slightly smaller font size on mobile */
+  }
+
+  .key-features h2 {
+      font-size: 3rem;
+  }
+
+  .feature h3 {
+      font-size: 2.5rem;
+  }
+
+  .feature-content {
+      flex-direction: column;
+  }
+
+  .feature-text,
+  .feature-image {
+      flex: none;
+      width: 100%;
+  }
+
+  .top-right-star,
+  .bottom-left-star {
+      width: 8rem;
+      height: 8rem;
+  }
+
+  .top-right-star {
+      top: -2rem;
+      right: -2rem;
+  }
+
+  .bottom-left-star {
+      bottom: -2rem;
+      left: -2rem;
+  }
+
+  .solar-system-mapping p {
+      font-size: 1rem;
+      padding: 0 2rem;
+  }
+
+  .star {
+      width: 2rem;
+      height: 2rem;
+  }
+
+  .star-left {
+      top: -0.5rem;
+      left: -1rem;
+  }
+
+  .star-right {
+      bottom: -0.5rem;
+      right: -1rem;
+  }
+
+  .venture-btn {
+      font-size: 1.1rem;
+      padding: 1rem 2.5rem;
+  }
+
+  .logo-circle {
+    width: 240px;
+    height: 240px;
+  }
+
+  .logo-large h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .logo-large h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .logo-circle {
+    width: 160px;
+    height: 160px;
+  }
+
+  .logo-large h1 {
+    font-size: 1.2rem;
+  }
+}
+
+.header-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.header-wave svg {
+  position: relative;
+  display: block;
+  width: calc(101% + -10px);
+}
+
+.header-wave .shape-fill {
+  fill: #FFFFFF;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  background-color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    background-color: transparent;
+  }
+
+  .navbar.nav-active {
+    background-color: #ffffff;
+  }
+
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -10%);
+    transition: all 0.5s ease-out;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .nav-links.nav-active {
+    background-color: #ffffff;
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+    opacity: 1;
+  }
+
+  .nav-links li {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.4s ease;
+  }
+
+  .nav-links.nav-active li {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.4s ease 0.2s;
+  }
+
+  .nav-links li a {
+    font-size: 1.5rem;
+    color: #000000;
+  }
+
+  .bookshelf-icon {
+    display: none;
+  }
+}
+
+.navbar-toggler {
+  border: none;
+  background-color: #ffffff;
+  padding: 0.5rem;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.55)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.nav-links {
+  background-color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.nav-item {
+  margin: 0 0.25rem;
+  position: relative;
+}
+
+.nav-link {
+  color: #000000 !important;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0.75rem !important;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  font-size: 0.9rem; 
+  font-family: 'Neue Montreal', 'Garet', sans-serif;
+  font-weight: bold;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #6256ca !important;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5em;
+  height: 5em;
+  background-color: #bbdb9f;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 0 Q60 40 100 50 Q60 60 50 100 Q40 60 0 50 Q40 40 50 0Z' fill='%23000000'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 0 Q60 40 100 50 Q60 60 50 100 Q40 60 0 50 Q40 40 50 0Z' fill='%23000000'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+  opacity: 0.3;
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav-item {
+    margin: 0.5rem 0;
+  }
+
+  .nav-link::before {
+    display: none;
+  }
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+@media (max-width: 992px) {
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+  }
+
+  .nav-links.nav-active {
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .nav-links li a {
+    font-size: 1.5rem;
+  }
+
+  .nav-links.nav-active li {
+    opacity: 1;
+    transition: opacity 0.4s ease 0.4s;
+  }
+
+  .bookshelf-icon {
+    display: none;
+  }
+}
+
+/* Footer styles */
+.footer {
+  background-image: url('/images/footer.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  padding: 4rem 0 0;
+  position: relative;
+  min-height: 500px; /* Adjust this value as needed */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.contact-form {
+  flex: 0 1 500px;
+  max-width: 500px;
+}
+
+.contact-form h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  background-color: #6256ca;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 8px 30px;
+  font-family: 'Neue Montreal', 'Garet', sans-serif;
+
+}
+
+.contact-form button:hover {
+  background-color: #4f44a3;
+}
+
+.social-media {
+  position: absolute;
+  bottom: 2rem;
+  left: 8rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.social-media a {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.social-media a:hover {
+  transform: scale(1.1);
+}
+
+.footer-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.footer-wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form {
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+
+  .social-media {
+    position: static;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+}
+
+.footer-logo {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+}
+
+@media (max-width: 768px) {
+  .footer-logo {
+    position: static;
+    margin: 2rem auto 0;
+  }
+}
+
+/* Add some utility classes that were previously provided by Tailwind */
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.h-screen { height: 100vh; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.bg-black { background-color: #000000; }
+.text-white { color: #ffffff; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.p-3 { padding: 0.75rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.text-sm { font-size: 0.875rem; }
+.bottom-4 { bottom: 1rem; }
+.left-1\/2 { left: 50%; }
+.transform { transform: translateX(-50%); }
+.top-4 { top: 1rem; }
+.right-4 { right: 1rem; }
+
+/* Add any other utility classes you need */
+
+/* Ajoutez ceci à la fin du fichier */
+.articles-main {
+  min-height: calc(100vh - 80px); /* Ajustez 80px selon la hauteur de votre header */
+  background-color: #0F0F0F;
+}
